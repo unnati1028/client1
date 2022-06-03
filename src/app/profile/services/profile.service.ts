@@ -14,6 +14,6 @@ export class ProfileService {
     return this.httpClient.get(this.api);
   }
   createProfile(profile: Profile): Observable<any> {
-    return this.httpClient.get(this.api);
+    return this.httpClient.post(this.api, profile);
   }
 }

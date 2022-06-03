@@ -7,7 +7,22 @@
   <small>* = required field</small>
   <form class="form" (ngSubmit)="createProfileSubmit()">
     <div class="form-group">
-      <select name="status" [(ngModel)]="profile.profStatus">
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="* Profile handle"
+        name="handle"
+        value="myprofilehandle"
+        required
+        [(ngModel)]="profile.handle"
+      />
+      <small class="form-text text-muted"
+        >A unique handle for your profile URL. Your full name, company name,
+        nickname, etc (This CAN'T be changed later)</small
+      >
+    </div>
+    <div class="form-group">
+      <select name="status" [(ngModel)]="profile.status">
         <option value="0">* Select Professional Status</option>
         <option value="Developer">Developer</option>
         <option value="Junior Developer">Junior Developer</option>

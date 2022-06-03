@@ -20,7 +20,8 @@ export class CreateProfileComponent implements OnInit {
         this.router.navigate(['/dashboard']);
       },
       (err) => {
-        this.error = err.error;
+        if (err.error !== null) this.error = err.error;
+        else this.error = {};
       }
     );
   }
