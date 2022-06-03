@@ -9,6 +9,7 @@ import { ProfileService } from 'src/app/profile/services/profile.service';
 })
 export class DashboardComponent implements OnInit {
   constructor(private router: Router, private profileService: ProfileService) {}
+  error: any = {};
   //handling initialization of your component
   //this rest call should happen inside the ngonit
   ngOnInit(): void {
@@ -16,6 +17,7 @@ export class DashboardComponent implements OnInit {
       () => {},
       (err) => {
         console.log(JSON.stringify(err));
+        this.error = err.error;
       }
     );
   }

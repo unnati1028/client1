@@ -5,9 +5,12 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { httpInterceptor } from '../shared/interceptor';
 import { ProfileService } from './services/profile.service';
+import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CreateProfileComponent
+  ],
   imports: [HttpClientModule, CommonModule, ProfileRoutingModule],
 providers: [ProfileService,httpInterceptor]
 })
