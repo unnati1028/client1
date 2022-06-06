@@ -14,12 +14,14 @@
     <tbody>
       <tr *ngFor="let e of exp">
         <td>{{ e.company }}</td>
-        <td class="hide-sm">{{ e.title }}</td>
-        <td class="hide-sm">
-          {{ e.to }}
+        <td>{{ e.title }}</td>
+        <td>
+          {{ e.from | date: "MM-dd-YYYY" }}-{{ e.to | date: "MM-dd-YYYY" }}
         </td>
         <td>
-          <button class="btn btn-danger">Delete</button>
+          <button class="btn btn-danger" (click)="deleteExp(e._id)">
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>

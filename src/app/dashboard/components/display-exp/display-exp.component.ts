@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProfileService } from 'src/app/profile/services/profile.service';
 
 @Component({
   selector: 'app-display-exp',
@@ -8,7 +10,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DisplayExpComponent implements OnInit {
   @Input()
   exp: any[] = []; //array
-  constructor() {}
+  @Output()
+  expId: EventEmitter<string> = new EventEmitter<string>();
+  constructor(private profileService: ProfileService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('Input value:::==>', this.exp);
+  }
+
+  deleteExp(id: string) {
+    console.log('InChild :::::' + id);
+    this.expId.emit(id);
+  }
 }

@@ -22,9 +22,9 @@ export class DashboardComponent implements OnInit {
       },
       (err) => {
         console.log(JSON.stringify(err));
-        if(err.error!==null)
-        this.error = err.error;
-        else this.error ={};
+        this.profile = null;
+        if (err.error !== null) this.error = err.error;
+        else this.error = {};
       }
     );
   }
