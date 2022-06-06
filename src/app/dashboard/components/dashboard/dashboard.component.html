@@ -4,8 +4,8 @@
     <i class="fas fa-user"></i> Welcome {{ profile.user.name }}
   </p>
   <app-dashboard-action></app-dashboard-action>
-  <app-display-exp></app-display-exp>
-  <app-display-edu></app-display-edu>
+  <app-display-exp [exp]="profile.experience"></app-display-exp>
+  <app-display-edu [edu]="profile.education"></app-display-edu>
   <div class="my-2">
     <button class="btn btn-danger">
       <i class="fas fa-user-minus"></i>

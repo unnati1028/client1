@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-display-exp',
   templateUrl: './display-exp.component.html',
-  styleUrls: ['./display-exp.component.css']
+  styleUrls: ['./display-exp.component.css'],
 })
 export class DisplayExpComponent implements OnInit {
+  @Input()
+  exp: any[] = []; //array
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

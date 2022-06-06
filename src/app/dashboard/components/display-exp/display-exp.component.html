@@ -1,6 +1,8 @@
 <div>
   <h2 class="my-2">Experience Credentials</h2>
-  <table class="table">
+
+  <h4 class="my-3" *ngIf="exp.length == 0">There is no content to display.</h4>
+  <table class="table" *ngIf="exp.length > 0">
     <thead>
       <tr>
         <th>Company</th>
@@ -10,18 +12,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Tech Guy Web Solutions</td>
-        <td class="hide-sm">Senior Developer</td>
-        <td class="hide-sm">02-03-2009 - 01-02-2014</td>
-        <td>
-          <button class="btn btn-danger">Delete</button>
+      <tr *ngFor="let e of exp">
+        <td>{{ e.company }}</td>
+        <td class="hide-sm">{{ e.title }}</td>
+        <td class="hide-sm">
+          {{ e.to }}
         </td>
-      </tr>
-      <tr>
-        <td>Traversy Media</td>
-        <td class="hide-sm">Instructor & Developer</td>
-        <td class="hide-sm">02-03-2015 - Now</td>
         <td>
           <button class="btn btn-danger">Delete</button>
         </td>
