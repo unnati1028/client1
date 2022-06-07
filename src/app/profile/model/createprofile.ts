@@ -1,4 +1,4 @@
-export class Profile {
+export class Createprofile {
   profStatus: string;
   company: string;
   website: string;
